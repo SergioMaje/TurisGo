@@ -6,14 +6,14 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary-color: #64748b;
-    --accent-color: #f59e0b;
-    --background-light: #f8fafc;
-    --text-dark: #1e293b;
-    --text-light: #64748b;
-    --white: #ffffff;
+    --primary-color: #00a8e8ff;
+    --primary-dark: #007ea7ff;
+    --secondary-color: #003459ff;
+    --accent-color: #00a8e8ff;
+    --background-light: #ffffffff;
+    --text-dark: #00171fff;
+    --text-light: #003459ff;
+    --white: #ffffffff;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
@@ -107,7 +107,7 @@ body {
 .hero {
     height: 70vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3') center/cover;
+                url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -356,22 +356,6 @@ body {
     font-weight: 600;
     color: var(--primary-color);
     margin-top: 0.5rem;
-}
-
-.apply-filters-btn {
-    width: 100%;
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 0.75rem;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.apply-filters-btn:hover {
-    background: var(--primary-dark);
 }
 
 /* Hotels Main Content */
