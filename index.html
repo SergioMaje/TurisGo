@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TURISGO - Descubre la aventura en Huila</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>TURISGO</h1>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#planes">Planes Personalizados</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="login-btn">Iniciar Sesión / Registrarse</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>DESCUBRE LA AVENTURA EN HUILA</h1>
+            <p>Paisajes únicos, experiencias auténticas</p>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="¿A dónde quieres ir?" id="destination">
+                    <input type="text" placeholder="Neiva, Huila" id="location">
+                    <button class="search-btn">Buscar</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>Explora por Categoría</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏞️</div>
+                    <h3>Sitios Turísticos</h3>
+                    <p>Explora lugares increíbles</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✈️</div>
+                    <h3>Planes</h3>
+                    <p>Itinerarios personalizados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations">
+        <div class="container">
+            <h2>Destinos Populares en Huila</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <a href="desiertoTatacoa.html">
+                        <img src="img/desierto.jpg" alt="Desierto de la Tatacoa">
+                    </a>
+                    
+                    <div class="destination-info">
+                        <h3>Desierto de la Tatacoa</h3>
+                        <p>Desde $89,000 COP</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <a href="sanAgustin.html">
+                        <img src="img/SanAgustín.jpg" alt="San Agustín">
+                    </a>
+                    
+                    <div class="destination-info">
+                        <h3>San Agustín</h3>
+                        <p>Desde $120,000 COP</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <a href="termales.html">
+                      <img src="img/termales.jpg" alt="Termales de Rivera">
+                    </a>
+
+                    <div class="destination-info">
+                        <h3>Termales de Rivera</h3>
+                        <p>Desde $45,000 COP</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <a href="manoGigante.html">
+                        <img src="img/manoGigante.png" alt="La Mano del Gigante">
+                    </a>
+
+                    <div class="destination-info">
+                        <h3>La Mano del Gigante</h3>
+                        <p>Desde $20,000 COP</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <a href="playaJuncal.html">
+                      <img src="img/playaJuncal.png" alt="Playa Juncal">
+                    </a>
+
+                    <div class="destination-info">
+                        <h3> Playa Juncal </h3>
+                        <p>Desde $12,000 COP</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <a href="Nevado.html">
+                        <img src="img/nevadoHuila.png" alt="Nevado del Huila">
+                    </a>
+
+                    <div class="destination-info">
+                        <h3> Nevado del Huila </h3>
+                        <p>Desde 400,000 COP</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TURISGO. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
