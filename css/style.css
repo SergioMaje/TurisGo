@@ -108,7 +108,7 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 70vh;
+    height: 80vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
                 url('../img/banner1.png') center/cover;
     display: flex;
