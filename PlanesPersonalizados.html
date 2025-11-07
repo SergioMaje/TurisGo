@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,7 +21,6 @@
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="index.html">Inicio</a></li>
-               
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -34,55 +33,86 @@
     <main class="personalizador">
         <header class="header-interno">
             <h1>Diseña tu Viaje al Huila</h1>
-            <p>Selecciona el tipo de aventura que buscas y te mostraremos el plan perfecto.</p>
+            <p>Selecciona el tipo de aventura que buscas, tu prioridad y presupuesto para encontrar el plan perfecto.</p>
         </header>
 
         <section class="filtros-container">
-    <h2>1. Selecciona tu tipo de aventura:</h2>
-    <div class="opciones">
-        <input type="radio" id="aventura" name="tipo_viaje" value="aventura" checked>
-        <label for="aventura" class="opcion-btn">
-            ⛰️ Aventura Extrema
-        </label>
+            <!-- FILTRO 1: TIPO DE AVENTURA -->
+            <h2>🗺️ 1. Selecciona tu tipo de aventura</h2>
+            <div class="opciones">
+                <input type="radio" id="aventura" name="tipo_viaje" value="aventura" checked>
+                <label for="aventura" class="opcion-btn">
+                    <span>⛰️</span>
+                    <span>Aventura Extrema</span>
+                </label>
 
-        <input type="radio" id="cultura" name="tipo_viaje" value="cultura">
-        <label for="cultura" class="opcion-btn">
-            🏛️ Cultura e Historia
-        </label>
+                <input type="radio" id="cultura" name="tipo_viaje" value="cultura">
+                <label for="cultura" class="opcion-btn">
+                    <span>🏛️</span>
+                    <span>Cultura e Historia</span>
+                </label>
 
-        <input type="radio" id="relax" name="tipo_viaje" value="relax">
-        <label for="relax" class="opcion-btn">
-            👨‍👩‍👧‍👦 Relax Familiar
-        </label>
-    </div>
-
-    <h2 class="grupo-filtros">2. ¿Qué priorizas en tu viaje?</h2>
-    <div class="opciones" id="prioridad-opciones">
-        <input type="radio" id="cercano" name="prioridad" value="cercano" checked>
-        <label for="cercano" class="opcion-btn">
-            🧭 Más Cercano al Lugar
-        </label>
-
-        <input type="radio" id="economico" name="prioridad" value="economico">
-        <label for="economico" class="opcion-btn">
-            💰 Más Económico
-        </label>
-
-        <input type="radio" id="lujoso" name="prioridad" value="lujoso">
-        <label for="lujoso" class="opcion-btn">
-            ✨ Lujoso / Exclusivo
-        </label>
-    </div>
-</section>
-
-
-        <section class="resultados">
-            <h2>Tu Plan Recomendado</h2>
-
-            <div class="resultados-grid" id="resultados-grid">
-                <p class="instruccion-inicial">Selecciona un tipo de viaje para ver tus planes.</p>
+                <input type="radio" id="relax" name="tipo_viaje" value="relax">
+                <label for="relax" class="opcion-btn">
+                    <span>👨‍👩‍👧‍👦</span>
+                    <span>Relax Familiar</span>
+                </label>
             </div>
 
+            <!-- FILTRO 2: PRIORIDAD EN EL VIAJE -->
+            <h2 class="grupo-filtros">🎯 2. ¿Qué priorizas en tu viaje?</h2>
+            <div class="opciones">
+                <input type="radio" id="cercano" name="prioridad" value="cercano" checked>
+                <label for="cercano" class="opcion-btn">
+                    <span>🧭</span>
+                    <span>Más Cercano al Lugar</span>
+                </label>
+
+                <input type="radio" id="economico" name="prioridad" value="economico">
+                <label for="economico" class="opcion-btn">
+                    <span>💰</span>
+                    <span>Más Económico</span>
+                </label>
+
+                <input type="radio" id="lujoso" name="prioridad" value="lujoso">
+                <label for="lujoso" class="opcion-btn">
+                    <span>✨</span>
+                    <span>Lujoso / Exclusivo</span>
+                </label>
+            </div>
+
+            <!-- FILTRO 3: PRESUPUESTO DE HOTEL -->
+            <h2 class="grupo-filtros">🏨 3. ¿Cuál es tu presupuesto máximo para hotel por noche?</h2>
+            <div class="presupuesto-selector">
+                <div class="presupuesto-slider">
+                    <input 
+                        type="range" 
+                        id="presupuesto-hotel" 
+                        min="20000" 
+                        max="500000" 
+                        value="500000" 
+                        step="10000"
+                    >
+                </div>
+                <div class="presupuesto-labels">
+                    <span>$20,000</span>
+                    <span>$500,000</span>
+                </div>
+                <div class="presupuesto-valor">
+                    <p>Presupuesto máximo por noche:</p>
+                    <strong id="presupuesto-valor">$500,000 COP</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="resultados">
+            <h2>✈️ Tu Plan Recomendado</h2>
+
+            <div class="resultados-grid" id="resultados-grid">
+                <p class="instruccion-inicial">
+                    🔍 Selecciona tus preferencias para ver los planes disponibles...
+                </p>
+            </div>
         </section>
     </main>
 
@@ -92,8 +122,8 @@
         </div>
     </footer>
 
-    <script src="js/planes.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="Js/planes.js"></script>
+    <script src="Js/dashboard.js"></script>
 
 </body>
 
