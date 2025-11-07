@@ -73,36 +73,6 @@ body {
   color: var(--primary-color);
 }
 
-.login-btn {
-  background: var(--primary-color);
-  color: var(--white);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: auto;
-}
-
-.login-btn:hover {
-  background: var(--primary-dark);
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: var(--white);
-  margin: 3px 0;
-  transition: 0.3s;
-}
-
 /* Hero Section */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -336,4 +306,84 @@ footer p {
   .card-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Estilos para la sección de Recomendación Destacada */
+.recomendacion-destacada {
+    padding: 60px 20px;
+    background-color: #f0f8ff; /* Fondo muy claro para diferenciar */
+    border-top: 2px solid #e0e0e0;
+}
+
+.destacado-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* Contenido a la izquierda, imagen a la derecha */
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 52, 89, 0.1); /* Usando el secundario para la sombra */
+    overflow: hidden;
+}
+
+.destacado-contenido {
+    padding: 40px;
+    flex: 1; /* Ocupa el espacio restante */
+}
+
+.destacado-contenido h2 {
+    color: #003459ff; /* Color secundario/oscuro */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.destacado-contenido h3 {
+    color: #00a8e8ff; /* Color primario/acento */
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.destacado-contenido p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.destacado-img {
+    width: 40%; /* La imagen ocupa el 40% del ancho */
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+}
+
+.destacado-btn {
+    display: inline-block;
+    background-color: #00a8e8ff; /* Color primario */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.destacado-btn:hover {
+    background-color: #007ea7ff; /* Color oscuro al pasar el ratón */
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .destacado-card {
+        flex-direction: column; /* Apila el contenido y la imagen en móvil */
+    }
+
+    .destacado-img {
+        width: 100%; /* La imagen ocupa todo el ancho */
+        height: 200px; /* Altura fija en móvil */
+    }
+
+    .destacado-contenido {
+        padding: 30px;
+        text-align: center;
+    }
 }

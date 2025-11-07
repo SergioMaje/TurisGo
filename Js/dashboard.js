@@ -85,7 +85,7 @@ class Dashboard {
 
         <div class="nav-section">
           <div class="nav-section-title">INFORMACIÓN</div>
-          <a href="#planes" class="nav-item">
+          <a href="PlanesPersonalizados.html" class="nav-item">
             <span class="nav-icon">✈️</span>
             <span class="nav-text">Planes Personalizados</span>
           </a>

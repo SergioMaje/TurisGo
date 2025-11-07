@@ -18,6 +18,13 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -33,12 +40,16 @@ body {
 
 /* Header */
 .header {
-    background: var(--text-dark);
+    background: rgba(0, 23, 31, 0.95);
+    backdrop-filter: blur(10px);
     color: var(--white);
     padding: 1rem 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
@@ -76,47 +87,25 @@ body {
     color: var(--primary-color);
 }
 
-.login-btn {
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: auto;
-}
 
-.login-btn:hover {
-    background: var(--primary-dark);
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--white);
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
-/* Hero Section */
+/* Hero Section - CORREGIDO PARA PANTALLA COMPLETA */
 .hero {
-    height: 80vh;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url('../img/banner1.png') center/cover;
+                url('../img/banner1.png') center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 .hero-hotels {
@@ -130,11 +119,17 @@ body {
     color: var(--white);
 }
 
+.hero-content {
+    z-index: 2;
+    padding: 2rem;
+}
+
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
 }
 
 .hero-content p {
@@ -186,10 +181,11 @@ body {
     background: var(--primary-dark);
 }
 
-/* Services Section */
+/* Services Section - SIN ESPACIO ARRIBA */
 .services {
     padding: 5rem 0;
     background: var(--white);
+    margin-top: 0;
 }
 
 .services h2 {
@@ -525,6 +521,10 @@ body {
         display: flex;
     }
     
+    .hero {
+        background-attachment: scroll;
+    }
+    
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -549,6 +549,10 @@ body {
 @media (max-width: 480px) {
     .hero-content h1 {
         font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
     }
     
     .services-grid {

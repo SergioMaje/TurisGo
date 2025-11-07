@@ -1,0 +1,244 @@
+/*
+ * DEFINICIÓN DE VARIABLES DE COLOR (Asumiendo que están aquí o en un archivo previo)
+ * :root {
+ * --primary-color: #00a8e8ff;  // Azul claro (Acento, botones)
+ * --primary-dark: #007ea7ff;   // Azul medio (Hover, títulos)
+ * --secondary-color: #003459ff; // Azul oscuro (Header, línea de detalle)
+ * --white: #ffffffff;
+ * --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+ * --text-dark: #00171fff;
+ * --text-light: #003459ff;
+ * }
+*/
+
+/* ------------------------------------------- */
+/* ESTILOS GENERALES Y CONTENEDORES DE LA PÁGINA */
+/* ------------------------------------------- */
+
+.personalizador {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.header-interno {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-interno h1 {
+    color: var(--secondary-color, #003459ff);
+    font-size: 2.5em;
+    margin-top: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header-interno p {
+    color: var(--text-light, #003459ff);
+    font-size: 1.1em;
+}
+
+/* ------------------------------------------- */
+/* ESTILOS DE LOS FILTROS (RADIO BUTTONS) */
+/* ------------------------------------------- */
+
+.filtros h2 {
+    text-align: center;
+    color: var(--text-dark, #00171fff);
+    margin-bottom: 25px;
+}
+
+
+
+/* NUEVOS ESTILOS para alinear los dos GRUPOS de filtros horizontalmente */
+.filtros-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex; /* La clave para la alineación horizontal */
+    justify-content: space-around; /* Distribuye el espacio entre los dos grupos */
+    gap: 30px; /* Espacio entre el grupo de tipo y el grupo de prioridad */
+}
+
+/* Estilo para cada grupo individual */
+.grupo-filtro {
+    flex: 1; /* Permite que ambos grupos crezcan por igual */
+    min-width: 300px; /* Asegura un ancho mínimo */
+}
+
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    flex-wrap: wrap; /* Permite que las opciones se ajusten en pantallas pequeñas */
+}
+
+/* Ocultar los radio buttons nativos */
+.opciones input[type="radio"] {
+    display: none;
+}
+
+/* Estilo del botón (label) - Opción sin seleccionar */
+.opcion-btn {
+    cursor: pointer;
+    padding: 15px 20px;
+    /* Borde y color con el primario/acento */
+    border: 2px solid var(--primary-color, #00a8e8ff); 
+    border-radius: 50px;
+    background-color: var(--white, white);
+    color: var(--primary-color, #00a8e8ff);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+/* Efecto Hover */
+.opcion-btn:hover {
+    background-color: var(--primary-color, #00a8e8ff);
+    color: var(--white, white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo CLAVE: Cuando el radio button está seleccionado (checked) */
+.opciones input[type="radio"]:checked + .opcion-btn {
+    background-color: var(--primary-dark, #007ea7ff); /* Color más oscuro al seleccionar */
+    color: var(--white, white);
+    border-color: var(--primary-dark, #007ea7ff);
+    box-shadow: 0 4px 10px rgba(0, 168, 232, 0.5); /* Sombra con el color primario */
+    transform: scale(1.05);
+}
+
+/* ------------------------------------------- */
+/* ESTILOS DE LOS RESULTADOS DINÁMICOS (JS) */
+/* ------------------------------------------- */
+
+.resultados h2 {
+    text-align: center;
+    color: var(--text-dark, #00171fff);
+    margin-bottom: 30px;
+}
+
+/* Estilos para el contenedor de la cuadrícula (para mostrar múltiples tarjetas) */
+.resultados-grid {
+    display: grid;
+    /* Muestra dos columnas si el espacio lo permite, si no, una sola */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 30px; /* Espacio entre las tarjetas */
+    margin: 20px auto;
+}
+
+.instruccion-inicial {
+    grid-column: 1 / -1; /* Ocupa todo el ancho en la cuadrícula */
+    text-align: center;
+    color: #666;
+    padding: 50px 0;
+    font-style: italic;
+}
+
+/* Estilo base para las tarjetas generadas por JavaScript */
+.tarjeta-dinamica {
+    background-color: var(--white, white);
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    padding: 30px;
+    border-left: 5px solid var(--primary-color, #00a8e8ff); /* Borde de acento */
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.5s ease-out; /* Animación de entrada para suavizar la aparición */
+}
+
+.tarjeta-dinamica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 52, 89, 0.2);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tarjeta-contenido h3 {
+    color: var(--primary-dark, #007ea7ff); /* Título de la tarjeta con el azul oscuro */
+    border-bottom: 2px dashed #EEE;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.detalle {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 3px solid var(--secondary-color, #003459ff); /* Línea de detalle con el azul secundario */
+}
+
+.detalle h4 {
+    margin-top: 0;
+    color: var(--accent-color, #00a8e8ff); /* Títulos de detalle con el color de acento */
+    font-size: 1.1em;
+}
+
+.detalle p {
+    margin-top: 5px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.boton-destino {
+    display: inline-block;
+    background-color: var(--primary-color, #00a8e8ff);
+    color: var(--white, white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.boton-destino:hover {
+    background-color: var(--primary-dark, #007ea7ff);
+}
+
+
+/* ------------------------------------------- */
+/* RESPONSIVIDAD */
+/* ------------------------------------------- */
+
+@media (max-width: 950px) {
+    .resultados-grid {
+        grid-template-columns: 1fr; /* Una sola columna en tabletas/móviles */
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .opciones {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .opcion-btn {
+        width: 100%;
+        max-width: 300px; /* Limitar el ancho en móviles */
+    }
+
+    .personalizador {
+        padding: 15px;
+    }
+
+    .tarjeta-dinamica {
+        padding: 20px;
+    }
+}
+
+
+
